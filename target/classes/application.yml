@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: dev
+  thymeleaf:
+    cache: false
+    mode: HTML
+    encoding: UTF-8
+
+
+
+
+
+
+
+
+
+
