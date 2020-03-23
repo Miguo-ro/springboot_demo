@@ -40,7 +40,7 @@ public class TagServiceImpl implements TagService {
         if (t == null) {
             throw new NotFoundException("标签不存在！");
         }
-        BeanUtils.copyProperties(tag,t);
+        BeanUtils.copyProperties(t,tag);
         return tagRepository.save(t);
     }
     @Transactional
