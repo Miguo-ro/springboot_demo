@@ -6,10 +6,14 @@ import com.miguo.blog.po.Tag;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -40,7 +44,7 @@ public class TagServiceImpl implements TagService {
         if (t == null) {
             throw new NotFoundException("标签不存在！");
         }
-        BeanUtils.copyProperties(t,tag);
+        BeanUtils.copyProperties(tag,t);
         return tagRepository.save(t);
     }
     @Transactional
@@ -52,5 +56,34 @@ public class TagServiceImpl implements TagService {
     @Override
     public Tag getTagByName(String name) {
         return tagRepository.findByName(name);
+    }
+
+    @Override
+    public List<Tag> listTag() {
+        return tagRepository.findAll();
+    }
+
+    @Override
+    public List<Tag> listTag(String ids) {
+
+        return tagRepository.findAllById(converToList(ids));
+    }
+
+    private  List<Long> converToList(String ids){
+        List<Long> list=new ArrayList<>();
+        if (!"".equals(ids) && ids!=null){
+            String[] idarray=ids.split(",");
+            for (int i=0;i<idarray.length;i++){
+                list.add(new Long(idarray[i]));
+            }
+        }
+        return list;
+    }
+
+    @Override
+    public List<Tag> listTagTop(Integer size) {
+        Sort sort=Sort.by(Sort.Direction.DESC,"blogs.size");
+        Pageable pageable= PageRequest.of(0,size,sort);
+         return tagRepository.FindTop(pageable);
     }
 }

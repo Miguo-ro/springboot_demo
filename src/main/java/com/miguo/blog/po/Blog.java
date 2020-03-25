@@ -13,11 +13,14 @@ public class Blog {
     @GeneratedValue
     private Long id;
     private String title;
+    @Basic(fetch = FetchType.LAZY)
+    @Lob
     private String content;
+    private String description;
     private String firstPicture;
     private String flag;
     private Integer views;
-    private boolean apperciation;
+    private boolean appreciation;
     private boolean shareStatement;
     private boolean commentable;
     private boolean published;
@@ -35,11 +38,30 @@ public class Blog {
     @ManyToOne
     private User user;
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Transient
+    private String tagIds;
+
     @OneToMany(mappedBy = "blog")
     private List<Comment> comments=new ArrayList<>();
 
     public List<Comment> getComments() {
         return comments;
+    }
+
+    public String getTagIds() {
+        return tagIds;
+    }
+
+    public void setTagIds(String tagIds) {
+        this.tagIds = tagIds;
     }
 
     public void setComments(List<Comment> comments) {
@@ -89,27 +111,32 @@ public class Blog {
     public Blog() {
     }
 
+
+    public Long getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
-        return "blog{" +
+        return "Blog{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", firstPicture='" + firstPicture + '\'' +
                 ", flag='" + flag + '\'' +
                 ", views=" + views +
-                ", apperciation=" + apperciation +
+                ", appreciation=" + appreciation +
                 ", shareStatement=" + shareStatement +
                 ", commentable=" + commentable +
                 ", published=" + published +
                 ", recommend=" + recommend +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
+                ", type=" + type +
+                ", tags=" + tags +
+                ", user=" + user +
+                ", comments=" + comments +
                 '}';
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public void setId(Long id) {
@@ -156,12 +183,12 @@ public class Blog {
         this.views = views;
     }
 
-    public boolean isApperciation() {
-        return apperciation;
+    public boolean isAppreciation() {
+        return appreciation;
     }
 
-    public void setApperciation(boolean apperciation) {
-        this.apperciation = apperciation;
+    public void setAppreciation(boolean appreciation) {
+        this.appreciation = appreciation;
     }
 
     public boolean isShareStatement() {
@@ -197,4 +224,25 @@ public class Blog {
     }
 
 
+    public void init(){
+        this.tagIds=tagsToIds(this.getTags());
+    }
+
+    private String tagsToIds(List<Tag> tags){
+        if(!tags.isEmpty()){
+            StringBuffer ids=new StringBuffer();
+            boolean flag=false;
+            for (Tag tag : tags) {
+                if (flag){
+                    ids.append(",");
+                }else {
+                    flag=true;
+                }
+                ids.append(tag.getId());
+            }
+            return ids.toString();
+        }else {
+            return tagIds;
+        }
+    }
 }
