@@ -141,6 +141,9 @@ body{
 .m-black{
     color:#333 !important;
 }
+.m-white{
+    color:#f5f5f5 !important;
+}
 /*-------shadow----------*/
 .m-shadow-small{
     -webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;

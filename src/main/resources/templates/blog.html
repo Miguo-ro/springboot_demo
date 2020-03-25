@@ -18,7 +18,7 @@
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item"> 迷国</h2>
-                <a href="#" class="active m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+                <a href="#" class="active m-item item m-mobile-hide"><i class="home icon"></i>博客 </a>
                 <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类 </a>
                 <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签 </a>
                 <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>归档 </a>
@@ -42,30 +42,29 @@
             <div class="ui top attached  segment">
                 <div class="ui horizontal link list">
                     <div class="item">
-                        <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image">
-                        <div class="content"><a href="#" class="header">迷国</a></div>
+                        <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image" th:src="@{${blog.user.avatar}}">
+                        <div class="content"><a href="#" class="header" th:text="${blog.user.nickname}">迷国</a></div>
                     </div>
                     <div class="item">
-                        <i class="calender icon"></i> 2017-10-01
+                        <i class="calender icon"></i> <span th:text="${#dates.format(blog.updateTime,'yyyy-MM-DD HH:mm')}">2017-10-01</span>
                     </div>
-                    <div class="item">
-                        <i class="eye icon"></i> 0000
+                    <div class="item" >
+                        <i class="eye icon"></i> <span th:text="${blog.views}">0000</span>
                     </div>
-            </div>
+                </div>
             <div class="ui attached segment">
                 <!--图片区域-->
-                <img src="https://picsum.photos/id/1/800/400" alt="" class="ui fluid rounded image">
+                <img  alt="" class="ui fluid rounded image"><img th:src="@{${blog.firstPicture}}" >
             </div>
             <div class="ui  attached padded segment">
                 <!--内容区域-->
-                <div class="ui right aligned basic segment">
-                    <div class="ui orange basic label">原创</div>
+                <div class="ui right aligned basic segment" >
+                    <div class="ui orange basic label" th:text="${blog.flag}">原创</div>
                 </div>
-                <h2 class="ui center aligned header">好习惯的力量</h2>
-                <!--code-->
-                <pre><code class="language-css">p { color: red }</code></pre>
-
-                <div id="content" class="js-toc-content m-padded-lr-responsive m-padded-tb-large typo typo-selection">
+                <h2 class="ui center aligned header" th:text="${blog.title}">好习惯的力量</h2>
+                <br>
+                <!--文章内容  要用MarkDown来渲染-->
+                <div id="content" class="js-toc-content m-padded-lr-responsive m-padded-tb-large typo typo-selection" th:text="${blog.content}">
                     <h2 id="tagline" class="serif">一致化浏览器排版效果，构建最适合中文阅读的网页排版</h2>
 
                     <ol id="table">
@@ -412,7 +411,7 @@ h5,h6{font-size:1em;}
                 </div>
                 <!--标签-->
                 <div class="m-padded-lr-responsive">
-                    <div class="ui teal basic left pointing label">方法论</div>
+                    <div class="ui teal basic left pointing label" th:each="tag:${blog.tags}" th:text="${tag.name}">方法论</div>
                 </div>
                 <!--赞赏-->
                 <div class="ui center aligned basic segment" >
@@ -421,11 +420,11 @@ h5,h6{font-size:1em;}
                         <div class="ui orange basic label">
                             <div class="ui images" style="font-size: inherit !important;">
                                 <div class="image">
-                                    <img src="../static/images/wechat_info.jpg" alt="" class="ui rounded bordered image" style="width: 120px">
+                                    <img src="../static/images/wechat_info.jpg" th:src="@{/images/wechat_info.jpg}" alt="" class="ui rounded bordered image" style="width: 120px">
                                     <div>支付宝</div>
                                 </div>
                                 <div class="image">
-                                    <img src="../static/images/wechat_info.jpg" alt="" class="ui rounded bordered image" style="width: 120px">
+                                    <img src="../static/images/wechat_info.jpg" th:src="@{/images/wechat_info.jpg}" alt="" class="ui rounded bordered image" style="width: 120px">
                                     <div>微信</div>
                                 </div>
                             </div>
@@ -436,14 +435,14 @@ h5,h6{font-size:1em;}
                 <div class="ui attached postive message">
                     <!--博客信息-->
                     <div class="ui grid">
-                        <div class="eleven wide column">
-                            <li>作者：张旭</li>
-                            <li>发表时间：2020-1-1</li>
-                            <li>版权声明</li>
-                            <li>公众号转载</li>
+                        <div class="eleven wide column teal">
+                            <li><span th:text="${blog.user.nickname}">作者：张旭 <a href="#" th:href="@{/about}" target="_blank">（联系作者）</a></span> </li>
+                            <li>发表时间：<span th:text="${#dates.format(blog.updateTime,'yyyy-MM-DD HH:mm')}">2020-1-1</span></li>
+                            <li>版权说明：自由转载-非商用-保持署名</li>
+                            <li>公众号转载：请在文末附上作者个人博客网站地址以及微信码</li>
                         </div>
                         <div class="five wide column">
-                            <img src="../static/images/wechat_info.jpg" alt="" class="ui right floated rounded bordered image" style="width: 110px">
+                            <img src="../static/images/wechat_info.jpg" th:src="@{/images/wechat_info.jpg}" alt="" class="ui right floated rounded bordered image" style="width: 110px">
                         </div>
 
                     </div>
