@@ -23,5 +23,7 @@ public interface BlogService {
 
     void deleteBlog(Long id);
 
+    Blog getAndConvert(Long id);
+
 
 }
