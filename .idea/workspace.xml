@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f269f14-19a6-4133-9f13-faff10f9133e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/miguo/blog/web/AboutController.java" afterDir="false" />
+    <list default="true" id="5f269f14-19a6-4133-9f13-faff10f9133e" name="Default Changelist" comment="后端管理开发&#10;tag manage;&#10;type manage;&#10;blog manage;&#10;展示页开发：&#10;index display;&#10;blog display ;&#10;comment display ;&#10;type display;&#10;archives display;&#10;complete!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/miguo/blog/Controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/miguo/blog/Controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/miguo/blog/web/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/miguo/blog/web/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blogRound.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blogRound.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/miguo/blog/Controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/miguo/blog/Controller/TestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/miguo/blog/web/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/miguo/blog/web/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/archives.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/blogRound.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/blogRound.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/about.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +184,7 @@
       <workItem from="1585283663698" duration="1504000" />
       <workItem from="1585310169628" duration="3319000" />
       <workItem from="1585358956165" duration="18403000" />
-      <workItem from="1585390180477" duration="9142000" />
+      <workItem from="1585390180477" duration="9768000" />
     </task>
     <task id="LOCAL-00001" summary="后端开发&#10;tag manage;&#10;type manage;&#10;complete!">
       <created>1584958410507</created>
@@ -266,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585400181434</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="后端管理开发&#10;tag manage;&#10;type manage;&#10;blog manage;&#10;展示页开发：&#10;index display;&#10;blog display ;&#10;comment display ;&#10;type display;&#10;archives display;&#10;complete!">
+      <created>1585402408940</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1585402408940</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,10 +311,10 @@
       <screen x="0" y="0" width="1458" height="864" />
     </state>
     <state x="460" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1458.864@0.0.1458.864" timestamp="1584758638762" />
-    <state x="253" y="0" key="CommitChangelistDialog2" timestamp="1585400179461">
+    <state x="253" y="0" key="CommitChangelistDialog2" timestamp="1585402656019">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state x="253" y="0" key="CommitChangelistDialog2/0.0.1458.864@0.0.1458.864" timestamp="1585400179461" />
+    <state x="253" y="0" key="CommitChangelistDialog2/0.0.1458.864@0.0.1458.864" timestamp="1585402656019" />
     <state width="242" height="189" key="DatabaseViewActions_Filter" timestamp="1585398732755">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
@@ -378,10 +375,14 @@
       <screen x="0" y="0" width="1458" height="864" />
     </state>
     <state width="1400" height="350" key="GridCell.Tab.2.right/0.0.1458.864@0.0.1458.864" timestamp="1585398247297" />
-    <state x="233" y="20" key="SettingsEditor" timestamp="1584957825148">
+    <state x="603" y="157" key="RollbackChangesDialog" timestamp="1585402551098">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state x="233" y="20" key="SettingsEditor/0.0.1458.864@0.0.1458.864" timestamp="1584957825148" />
+    <state x="603" y="157" key="RollbackChangesDialog/0.0.1458.864@0.0.1458.864" timestamp="1585402551098" />
+    <state x="233" y="20" key="SettingsEditor" timestamp="1585402838943">
+      <screen x="0" y="0" width="1458" height="864" />
+    </state>
+    <state x="233" y="20" key="SettingsEditor/0.0.1458.864@0.0.1458.864" timestamp="1585402838943" />
     <state x="322" y="156" key="Vcs.Push.Dialog.v2" timestamp="1585287717312">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
