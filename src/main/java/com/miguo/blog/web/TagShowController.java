@@ -36,12 +36,10 @@ public class TagShowController {
         if (id == -1) {
             id=tagList.get(0).getId();
         }
-        BlogQuery blogQuery=new BlogQuery();
-//        TODO
         model.addAttribute("tags",tagList);
-        model.addAttribute("page",blogService.listBlog(pageable,blogQuery));
-        model.addAttribute("activeTypeId",id);
-        return "types";
+        model.addAttribute("page",blogService.listBlog(pageable,id));
+        model.addAttribute("activeTagId",id);
+        return "tags";
     }
 }
 
