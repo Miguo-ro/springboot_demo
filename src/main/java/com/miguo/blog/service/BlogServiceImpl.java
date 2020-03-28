@@ -19,10 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.criteria.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class BlogServiceImpl implements BlogService {
@@ -131,5 +128,20 @@ public class BlogServiceImpl implements BlogService {
 
         return blogRepository.findByQuery(pageable,query);
 
+    }
+
+    @Override
+    public Map<String, List<Blog>> archiveBlog() {
+        List<String> years =blogRepository.findGroupYears();
+        Map<String,List<Blog>> blogMap=new HashMap<>();
+        for (String year : years) {
+            blogMap.put(year,blogRepository.findByYear(year));
+        }
+        return blogMap;
+    }
+
+    @Override
+    public Long countBlog() {
+        return blogRepository.count();
     }
 }

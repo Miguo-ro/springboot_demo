@@ -41,54 +41,24 @@
                         <h3 class="ui teal header">归档</h3>
                     </div>
                     <div class="right aligned column">
-                        共 <h2 class="ui orange header m-inline-block m-text-thin">14</h2> 篇
+                        共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${blogcount}">14</h2> 篇博客
                     </div>
                 </div>
             </div>
-            <h2 class="ui center aligned header">2017</h2>
-            <div class="ui fluid vertical menu">
-                <!--归档-->
-                <a href="#" class="item">
+            <div th:each="item : ${archivemap}">
+                <h2 class="ui center aligned header m-padded-tb" th:text="${item.key}" >2017</h2>
+                <div class="ui fluid vertical menu">
+                    <!--归档-->
+                    <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" class="item" target="_blank" th:each="blog : ${item.value}">
                     <span>
-                        <i class="mini teal circle icon"></i>习惯的力量
-                        <div class="ui teal basic left pointing label m-padded-mini m-text-thin">9月3号</div>
+                        <i class="mini teal circle icon"></i><span th:text="${blog.title}">习惯的力量</span>
+                        <div class="ui teal basic left pointing label m-padded-mini m-text-thin" th:text="${#dates.format(blog.updateTime,'MMMdd')}">9月3号</div>
                     </span>
-                    <div class="ui orange basic left pointing label m-padded-mini ">原创</div>
-
-
-                </a>
-
-                <a href="#" class="item">
-                    <span>
-                        <i class="mini teal circle icon"></i>习惯的力量
-                        <div class="ui teal basic left pointing label m-padded-mini m-text-thin">9月3号</div>
-                    </span>
-                    <div class="ui orange basic left pointing label m-padded-mini ">原创</div>
-
-
-                </a>
-                <a href="#" class="item">
-                    <span>
-                        <i class="mini teal circle icon"></i>习惯的力量
-                        <div class="ui teal basic left pointing label m-padded-mini m-text-thin">9月3号</div>
-                    </span>
-                    <div class="ui orange basic left pointing label m-padded-mini ">原创</div>
-
-
-                </a>
-                <a href="#" class="item">
-                    <span>
-                        <i class="mini teal circle icon"></i>习惯的力量
-                        <div class="ui teal basic left pointing label m-padded-mini m-text-thin">9月3号</div>
-                    </span>
-                    <div class="ui orange basic left pointing label m-padded-mini ">原创</div>
-
-
-                </a>
-
-
-
+                        <div class="ui orange basic left pointing label m-padded-mini " th:text="${blog.flag}">原创</div>
+                    </a>
+                </div>
             </div>
+
         </div>
     </div>
 
