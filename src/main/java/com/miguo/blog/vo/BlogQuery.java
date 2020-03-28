@@ -1,10 +1,11 @@
 package com.miguo.blog.vo;
 
+import java.util.List;
+
 public class BlogQuery {
     private String title;
     private Long TypeId;
     private boolean recommend;
-
     public BlogQuery() {
     }
 

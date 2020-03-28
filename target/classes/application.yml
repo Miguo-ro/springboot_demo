@@ -6,6 +6,7 @@ spring:
     mode: HTML
     encoding: UTF-8
 
+comment.avatar: /images/avatar.jpg
 
 
 

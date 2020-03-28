@@ -16,6 +16,8 @@ public interface BlogService {
 
     Page<Blog> listBlog(Pageable pageable);
     Page<Blog> listBlog(Pageable pageable,String query);
+    Page<Blog> listBlog(Pageable pageable,Long tagId);
+
 
     Blog saveBlog(Blog blog);
 
@@ -24,6 +26,8 @@ public interface BlogService {
     void deleteBlog(Long id);
 
     Blog getAndConvert(Long id);
+
+
 
 
 }
