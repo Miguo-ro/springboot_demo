@@ -99,8 +99,8 @@
             <div class="ui attached postive message">
                 <!--博客信息-->
                 <div class="ui grid">
-                    <div class="eleven wide column ">
-                        <li><span th:text="${blog.user.nickname}">作者：张旭 <a href="#" th:href="@{/about}" target="_blank">（联系作者）</a></span>
+                    <div class="eleven wide column m-margin-tb">
+                        <li><span> <a th:text="|作者：${blog.user.nickname}  （联系作者）|" href="#" th:href="@{/about}" target="_blank">作者信息</a></span>
                         </li>
                         <li>发表时间：<span th:text="${#dates.format(blog.updateTime,'yyyy-MM-DD HH:mm')}">2020-1-1</span>
                         </li>
