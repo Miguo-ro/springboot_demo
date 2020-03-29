@@ -5,6 +5,8 @@ spring:
     cache: false
     mode: HTML
     encoding: UTF-8
+  messages:
+    basename: i18n/messages
 
 comment.avatar: /images/avatar.jpg
 
