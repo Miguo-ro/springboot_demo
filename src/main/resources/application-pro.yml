@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ruyawbby?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
-    username: ruyawbby
-    password: u3R26Ti5ui
+    url: jdbc:mysql://123.56.174.172:3306/miguo_blog?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT&allowPublicKeyRetrieval=true
+    username: root
+    password: root
   jpa:
     hibernate:
       ddl-auto: update
@@ -14,4 +14,6 @@ spring:
       com.miguo: info
     file: log/blog-pro.log
 server:
-  port: 3306
+  port: 8800
+
+
